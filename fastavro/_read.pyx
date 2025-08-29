@@ -1180,10 +1180,6 @@ cpdef schemaless_reader(
     return_named_type=False,
     return_named_type_override=False,
 ):
-    if writer_schema == reader_schema:
-        # No need for the reader schema if they are the same
-        reader_schema = None
-
     named_schemas = _default_named_schemas()
     writer_schema = parse_schema(writer_schema, named_schemas["writer"])
 

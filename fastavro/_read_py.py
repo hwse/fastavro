@@ -1282,10 +1282,6 @@ def schemaless_reader(
 
     Note: The ``schemaless_reader`` can only read a single record.
     """
-    if writer_schema == reader_schema:
-        # No need for the reader schema if they are the same
-        reader_schema = None
-
     named_schemas: Dict[str, NamedSchemas] = _default_named_schemas()
     writer_schema = parse_schema(writer_schema, named_schemas["writer"])
 
